@@ -4,92 +4,90 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-}
-
-.container {
+    min-height: 100vh;
+    background-color: #f0f0f0;
+  }
+  
+  .container {
     width: 100%;
-    max-width: 500px;
+    max-width: 400px; /* Updated max-width */
     border: 2px solid #000;
     padding: 20px;
     border-radius: 5px;
     background-color: #f9f9f9;
     box-shadow: 0 4px 20px rgb(157 146 146);
-    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-height: 80vh; /* Set max height to allow scrolling */
-    overflow-y: auto; /* Enable vertical scrolling */
-    box-sizing: border-box; /* Include padding and border in element's total width and height */
-}
-
-.input-container {
+    max-height: 80vh;
+    overflow-y: auto;
+    box-sizing: border-box;
+    margin: 20px; /* Default margin */
+  }
+  
+  .input-container {
     display: flex;
     align-items: center;
-    margin-bottom: 20px; /* Space between input and list */
-    width: 100%; /* Ensure input and button take full width of container */
-}
-
-.input_add {
-    flex: 1; /* Take up available space */
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  .input_add {
+    flex: 1;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    margin: 10px; /* Space between input and button */
-}
-
-#addButton {
+    margin-right: 10px;
+    box-sizing: border-box;
+  }
+  
+  #addButton {
     padding: 10px 20px;
-    background-color: #e0e0e0; /* Old color option for button */
+    background-color: #e0e0e0;
     color: black;
     border: 2px solid black;
     border-radius: 5px;
     cursor: pointer;
-    height: auto; /* Dynamic height based on content */
-    margin-left: 10px; /* Space between input and button */
-}
-
-ul {
+    height: auto;
+  }
+  
+  ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    flex: 1; /* Allow ul to grow and shrink as needed */
-}
-
-li {
+    width: 100%;
+  }
+  
+  li {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 10px;
+    margin: 10px 0; /* Adjusted margin */
     padding: 10px;
     background-color: #fff;
     border-radius: 5px;
-    width: 400px;
-}
-
-li.new-item {
-    border: none;
-}
-
-li p {
+    width: 100%; /* Ensure full width */
+    box-sizing: border-box;
+  }
+  
+  li p {
     margin: 0;
     flex-grow: 1;
     padding-right: 10px;
-}
-
-li input[type="text"] {
+  }
+  
+  li input[type="text"] {
     width: 95%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-}
-
-li div {
+  }
+  
+  li div {
     display: flex;
-}
-
-button {
+  }
+  
+  button {
     border: 1px solid #000;
     padding: 8px 12px;
     border-radius: 5px;
@@ -97,30 +95,63 @@ button {
     cursor: pointer;
     display: inline-flex;
     align-items: center;
-}
-
-button:hover {
+  }
+  
+  button:hover {
     background-color: #d0d0d0;
-}
-
-button:active {
+  }
+  
+  button:active {
     background-color: #c0c0c0;
-}
-
-button:disabled {
+  }
+  
+  button:disabled {
     opacity: 0.5;
     cursor: not-allowed;
-}
-
-/* Specific styles for edit, save, and delete buttons */
-button.editMode,
-button.saveMode,
-button.deleteButton {
-    border: none; /* Remove border */
-    background-color: transparent; /* Remove background color */
-}
-
-.size-6 {
+  }
+  
+  button.editMode,
+  button.saveMode,
+  button.deleteButton {
+    border: none;
+    background-color: transparent;
+  }
+  
+  .size-6 {
     width: 24px;
     height: 24px;
-}
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    .container {
+      max-width: 100%; 
+      margin: 20px;
+      padding: 10px;
+    }
+  
+    #addButton {
+      padding: 8px 16px;
+    }
+  
+    li {
+      padding: 8px;
+      width: calc(100% - 20px); 
+    }
+  
+    button {
+      padding: 6px 10px;
+    }
+  
+    .size-6 {
+      width: 20px;
+      height: 20px;
+    }
+  } 
+  
+  @media (min-width: 200px) and (max-width: 1024px) {
+    .container {
+      width: 86%; /* Adjust width based on viewport */
+    }
+  }
+  
